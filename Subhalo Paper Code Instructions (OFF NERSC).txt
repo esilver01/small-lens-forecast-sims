@@ -1,13 +1,11 @@
 ﻿0. Introduction
 
 
-These are the basic instructions and requirements to run the code at https://github.com/esilver01/subhalo-paper-code, used in our paper. It should be possible to replicate all of the results of the paper, though this has not been 100% tested.
+These are the basic instructions and requirements to run the code at https://github.com/esilver01/small-lens-forecast-sims, used in our paper. It should be possible to replicate all of the results of the paper, though this has not been 100% tested.
 
 
 One note on the code: the different notebooks may work with various different kernels. Version issues will probably occur, and are probably unavoidable if people are running this code on many different machines. The kernels that we used on NERSC are the following:
 NERSC Python: lens_forecast.ipynb, simulations.ipynb, simulations_trunc_SIS.ipynb, figures.ipynb
-Tensorflow-2.6.0: shielded_model.ipynb
-Tensorflow-2.9.0: shielded_model_small.ipynb
 
 
 1. Downloads and Installs
@@ -66,24 +64,7 @@ Path to VELA images = '/global/cfs/projectdirs/deepsrch/vela' (default)
 Remember to set the download path in the last code cell when actually simulating a full set of 20,000 images.
 
 
-4. Neural Network Training (Requires generated simulations)
-
-
-Models used in the paper are saved in the model_training folder
-To train, run the right notebook:
-* 0.5”-1.5” Einstein radius (Model 1): shielded_model.ipynb (tensorflow-2.6.0 kernel)
-* 0.15”-0.5” or 0.02”-0.15” Einstein radius (Models 2 and 3): shielded_model_small.ipynb (tensorflow-2.9.0 kernel)
-
-
-Options set in first code cell after imports:
-Home directory = "/global/cfs/projectdirs/deepsrch/jwst_sims/data/" (default)
-Simulations directory = ‘/global/cfs/projectdirs/deepsrch/jwst_sims/pristine_bright/’ (default for 0.5”-1.5” simulations)
-
-
-Both notebooks include sections for validation and testing after the training is complete. Only simulations.ipynb tests Model 1a and 1b on the drizzled HST images.
-
-
-5. Figures (Requires generated simulations)
+4. Figures (Requires generated simulations)
 
 
 Run through the different sections in figures.ipynb (NERSC Python kernel) to generate the rest of the figures used in the paper that aren’t already in the previous notebooks.
